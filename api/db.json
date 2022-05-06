@@ -1,4 +1,19 @@
-
 {
-  "streams":[]
+  "streams": [
+    {
+      "title": "123",
+      "description": "456",
+      "id": 1
+    },
+    {
+      "title": "123",
+      "description": "456",
+      "id": 2
+    },
+    {
+      "title": "xxx",
+      "description": "x rated stream",
+      "id": 3
+    }
+  ]
 }

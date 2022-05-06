@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { matchPath } from 'react-router-dom';
 import { Field, reduxForm } from 'redux-form';  // Field is a component and reduxForm is a function.
+import { connect } from 'react-redux';
+import { createStream } from '../../actions';
 
 class StreamCreate extends React.Component{
   renderError({error, touched}){  // Destructured from meta
@@ -31,9 +33,10 @@ class StreamCreate extends React.Component{
     )  // Alternative syntax to get other properties inside 'input' object (besides just 'value' and 'onchange')  that redux form cares about.
   }
 
-  onSubmit(formValues){
+  onSubmit=(formValues)=>{
     // Redux form does not need: event.preventDefault(); 
     console.log("formValues",formValues);
+    this.props.createStream(formValues);
   }
 
   render() {
@@ -69,7 +72,15 @@ const validate=(formValues)=>{
 //   )
 // }
 
-export default reduxForm({
-  form: 'streamCreate',
-  validate,
-})(StreamCreate); // 'reduxForm' returns a function and we immediately call that function with 'StreamCreate'
+// formwrapped version of streamCreate component
+const formWrapped = reduxForm({
+    form: 'streamCreate',
+    validate,
+  })(StreamCreate); 
+
+  export default connect(null, { createStream })(formWrapped);
+
+// export default reduxForm({
+//   form: 'streamCreate',
+//   validate,
+// })(StreamCreate); // 'reduxForm' returns a function and we immediately call that function with 'StreamCreate'
