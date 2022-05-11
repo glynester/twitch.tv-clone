@@ -20,8 +20,12 @@ export const signOut=()=>{
 // new action creator
 export const createStream=(formValues)=>{
   // asynchronous action creator - any time we make an asynchronous action creator, we are making use of redux thunk.
-  return async (dispatch)=>{
-    const response=await streams.post('/streams', formValues); // post request with axios
+  // return async (dispatch)=>{
+    // When we return, a function from an action creator, the function gets called automatically by Redux Thunk with two arguments, 'dispatch' and 'getState' - which allows us to get user ID from the redux store.
+    return async (dispatch, getState)=>{
+      const {userId} = getState().auth;  // Chrome redux detools shows structure of state (if you forget)
+      const response=await streams.post('/streams', {...formValues, userId});
+    // const response=await streams.post('/streams', formValues); // post request with axios
     // this is going to create a stream because we are following RESTful conventions.
     dispatch({ type: CREATE_STREAM, payload: response.data })
   }
