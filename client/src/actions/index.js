@@ -1,5 +1,6 @@
 import { formValues } from 'redux-form';
 import streams from '../apis/streams';  // instance of axios
+import history from '../history';
 import { SIGN_IN, SIGN_OUT, CREATE_STREAM, FETCH_STREAMS, FETCH_STREAM, DELETE_STREAM, EDIT_STREAM } from "./types";
 
 
@@ -28,6 +29,8 @@ export const createStream=(formValues)=>{
     // const response=await streams.post('/streams', formValues); // post request with axios
     // this is going to create a stream because we are following RESTful conventions.
     dispatch({ type: CREATE_STREAM, payload: response.data })
+    // do some programmatic navigation to get the user back to the root route.
+    history.push('/');    // New route to navigate to after success
   }
 }
 
