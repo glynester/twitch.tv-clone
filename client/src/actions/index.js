@@ -48,7 +48,7 @@ export const fetchStream=(id)=>async dispatch=>{
 
 // To edit a stream, we need to provide both the ID and the update that we're trying to make to that stream as arguments to the action creator.
 export const editStream=(id, formValues)=>async dispatch=>{
-  const response = await streams.put(`/streams/${id}`, formValues);
+  const response = await streams.patch(`/streams/${id}`, formValues);
   dispatch({ type: EDIT_STREAM, payload: response.data });
   history.push('/');
 }
