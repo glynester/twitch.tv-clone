@@ -1,3 +1,13 @@
+Both the following need to be running:
+
+Main Streams App:
+/Desktop/React_Projects/streams/client1/client
+npm start
+
+db.json server:
+/Desktop/React_Projects/streams/client1/api
+npm start
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
