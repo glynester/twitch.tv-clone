@@ -1,0 +1,26 @@
+{
+  "name": "rtmpserver",
+  "version": "1.0.0",
+  "description": "RTMP server for Streams App",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/glynester/twitch.tv-clone.git"
+  },
+  "keywords": [
+    "rtmpserver"
+  ],
+  "author": "gb",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/glynester/twitch.tv-clone/issues"
+  },
+  "homepage": "https://github.com/glynester/twitch.tv-clone#readme",
+  "dependencies": {
+    "node-media-server": "^2.3.9"
+  }
+}

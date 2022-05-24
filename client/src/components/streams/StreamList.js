@@ -40,7 +40,9 @@ class StreamList extends React.Component {
           {this.renderButtons(stream)}   {/* Buttons - called here for semantic UI styling and not at end*/}
           <i className='large middle aligned icon camera'></i>
           <div className='content'>
-            {stream.title}
+            <Link to={`/streams/${stream.id}`} classname="header">
+              {stream.title}
+            </Link>
             <div className='description'>
               {stream.description} 
             </div>

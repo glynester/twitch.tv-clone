@@ -1,6 +1,7 @@
 import React from 'react';
 // import { BrowserRouter, Route } from 'react-router-dom';
-import { Router, Route } from 'react-router-dom';  // Because we are using a custom history object now.
+import { Router, Route, Switch } from 'react-router-dom';  // Because we are using a custom history object now.
+// Switch matches only a single route.
 import StreamCreate from './streams/StreamCreate';
 import StreamList from './streams/StreamList';
 import StreamShow from './streams/StreamShow';
@@ -17,12 +18,14 @@ const App=()=>{
       {/* <Header /> This needs to be moved inside the router */}
       <Router history={history}>
         <Header />
-        <Route path='/' exact component={StreamList}/>
-        <Route path='/streams/new' component={StreamCreate}/>
-        {/* <Route path='/streams/edit' component={StreamEdit}/> */}
-        <Route path='/streams/edit/:id' component={StreamEdit}/>   {/* Colon required to add a variable element on the end of url. */}
-        <Route path='/streams/delete/:id' component={StreamDelete}/>
-        <Route path='/streams/show' component={StreamShow}/>
+        <Switch>
+          <Route path='/' exact component={StreamList}/>
+          <Route path='/streams/new' component={StreamCreate}/>
+          {/* <Route path='/streams/edit' component={StreamEdit}/> */}
+          <Route path='/streams/edit/:id' component={StreamEdit}/>   {/* Colon required to add a variable element on the end of url. */}
+          <Route path='/streams/delete/:id' component={StreamDelete}/>
+          <Route path='/streams/:id' component={StreamShow}/>
+        </Switch>
       {/* </BrowserRouter> */}
       </Router>
     </div> 

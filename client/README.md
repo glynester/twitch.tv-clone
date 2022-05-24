@@ -1,4 +1,4 @@
-Both the following need to be running:
+All 3 of the following need to be running:
 
 Main Streams App:
 /Desktop/React_Projects/streams/client1/client
@@ -6,6 +6,10 @@ npm start
 
 db.json server:
 /Desktop/React_Projects/streams/client1/api
+npm start
+
+RTMP server:
+/Desktop/React_Projects/streams/client1/rtmpserver
 npm start
 
 # Getting Started with Create React App
