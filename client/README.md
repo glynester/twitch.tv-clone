@@ -1,16 +1,19 @@
 All 3 of the following need to be running:
 
-Main Streams App:
+Main 'Streams' App:
 /Desktop/React_Projects/streams/client1/client
 npm start
 
-db.json server:
+API (db.json) server:
 /Desktop/React_Projects/streams/client1/api
 npm start
 
 RTMP server:
 /Desktop/React_Projects/streams/client1/rtmpserver
 npm start
+
+Need to install (OBS) Open Broadcaster Software
+https://obsproject.com/
 
 # Getting Started with Create React App
 
