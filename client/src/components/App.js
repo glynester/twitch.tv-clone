@@ -9,6 +9,7 @@ import StreamEdit from './streams/StreamEdit';
 import StreamDelete from './streams/StreamDelete';
 import Header from './Header';
 import history from '../history';
+import '../style/App.css';
 
 
 const App=()=>{

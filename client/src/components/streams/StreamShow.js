@@ -22,6 +22,12 @@ class StreamShow extends React.Component{
     console.log("this.videoRef=>",this.videoRef);
     this.buildPlayer();
   }
+  // we don't want to try to download a stream or process video when the video player is not present on the screen.
+  componentWillUnmount(){
+    console.log("I was unmounted!!!");
+    this.player.destroy();
+  }
+
 
   // Only set up video player after we know appropriate stream has been fetched.
   buildPlayer(){
