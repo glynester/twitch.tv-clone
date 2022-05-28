@@ -15,6 +15,32 @@ npm start
 Need to install (OBS) Open Broadcaster Software
 https://obsproject.com/
 
+~~~
+
+This App has basic CRUD functionality for the streams.
+
+TO SEE THE ACTUAL VIDEO STREAMING FUNCTIONALITY WORKING:
+Open (OBS) Open Broadcaster Software on your computer.
+Go to Settings => Stream
+  Service = 'Custom'
+  Server = 'rtmp://localhost/live'
+  Stream Key = '12'
+
+The stream Key must match the url you visit at 
+http://localhost:3000/streams/xx
+
+So the url with 
+Stream Key = 12 
+must be 
+http://localhost:3000/streams/12
+
+Click on StartStreaming on the OBS console.
+Click on the play button of the video player at 
+http://localhost:3000/streams/xx
+
+
+~~~
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
